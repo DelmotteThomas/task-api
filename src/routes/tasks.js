@@ -107,7 +107,7 @@ router.delete('/:id', (req, res) => {
   const deleted = tasks.splice(index, 1)[0];
 
   res.json({
-    message: 'Tâche supprimée',
+    message: 'Task deleted',
     task: deleted
   });
 });

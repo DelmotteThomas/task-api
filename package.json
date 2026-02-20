@@ -4,11 +4,31 @@
   "description": "API REST de gestion de tâches — Projet fil rouge CI/CD",
   "main": "src/app.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "node --watch src/app.js",
-    "test": "echo \"Tests à configurer\" && exit 0"
+    "start": "node src/index.js",
+    "dev": "pm2 start ecosystem.config.js",
+    "prod": "pm2 start ecosystem.config.js --env production",
+    "staging": "pm2 start ecosystem.config.js --env staging",
+    "stop": "pm2 stop task-api",
+    "restart": "pm2 restart task-api",
+    "reload": "pm2 reload task-api",
+    "logs": "pm2 logs task-api",
+    "monitor": "pm2 monit",
+    "test": "jest --verbose --forceExit --detectOpenHandles",
+    "test:watch": "jest --watch --verbose"
   },
-  "keywords": ["express", "api", "cicd", "pm2"],
+  "keywords": [
+    "express",
+    "api",
+    "cicd",
+    "pm2"
+  ],
   "author": "DelTo",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "supertest": "^7.2.2"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
