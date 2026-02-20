@@ -1,7 +1,7 @@
 {
-  "name": "task-api",
+  "name": "task-manager-api",
   "version": "1.0.0",
-  "description": "API REST de gestion de tâches — Projet fil rouge CI/CD",
+  "description": "API REST de gestion de tâches — Projet fil rouge CI/CD avec PM2 et GitHubAction",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/index.js",
@@ -13,6 +13,7 @@
     "reload": "pm2 reload task-api",
     "logs": "pm2 logs task-api",
     "monitor": "pm2 monit",
+    "cleanup": "pm2 delete task-api",
     "test": "jest --verbose --forceExit --detectOpenHandles",
     "test:watch": "jest --watch --verbose"
   },
@@ -20,15 +21,16 @@
     "express",
     "api",
     "cicd",
-    "pm2"
+    "pm2",
+    "rest"
   ],
   "author": "DelTo",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^30.2.0",
-    "supertest": "^7.2.2"
+    "jest": "^30.X.X",
+    "supertest": "^7.X.X"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.X.X"
   }
 }
